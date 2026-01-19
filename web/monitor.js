@@ -7,8 +7,8 @@ const createMonitorElement = () => {
     const container = document.createElement("div");
     container.className = "amd-gpu-monitor";
     container.style.position = "absolute";
-    container.style.top = "40px"; // Moved down to avoid toolbar
-    container.style.right = "5px";
+    container.style.top = "100px"; // Moved down to avoid toolbar
+    container.style.right = "0px";
     container.style.zIndex = "1000";
     container.style.backgroundColor = "#1a1a1a";
     container.style.color = "#fff";
@@ -17,7 +17,7 @@ const createMonitorElement = () => {
     container.style.fontFamily = "monospace";
     container.style.fontSize = "30px";
     container.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
-    container.style.width = "320px";
+    container.style.width = "330px";
     container.style.userSelect = "none";
 
     // Add title
@@ -393,6 +393,8 @@ const main = () => {
         updateMonitorUI(monitor, event.detail);
     });
 };
+
+localStorage.removeItem("amd-gpu-monitor-position");
 
 // Wait for DOM to be loaded
 app.registerExtension({
