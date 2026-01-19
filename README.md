@@ -8,12 +8,11 @@ A simple, lightweight AMD GPU monitoring tool for ComfyUI that displays real-tim
 
 - Real-time GPU utilization monitoring (%)
 - VRAM usage tracking (both in MB/GB and percentage)
-- GPU temperature monitoring (°C)
+- GPU junction temperature monitoring (°C)
 - Color-coded indicators (blue for low, orange for medium, red for high usage)
-- Draggable, collapsible, and closable UI
 - Position persistence between sessions
 - Works with ROCm-enabled GPUs
-- Specifically tested with AMD Radeon RX 7900 XTX
+- Specifically tested with AMD Radeon Pro VII
 
 ## Installation
 
@@ -36,12 +35,6 @@ git clone https://github.com/a442509097/ComfyUI-AMDGPUMonitor.git
 
 No setup is required. Once installed, the monitor will automatically appear in the top-right corner of ComfyUI's interface.
 
-### Monitor Features:
-
-- **Drag**: Click and hold the title bar to move the monitor anywhere on the screen
-- **Collapse/Expand**: Click the "−" button to collapse the monitor to just the title bar
-- **Close**: Click the "×" button to close the monitor (a "Show AMD GPU Monitor" button will appear to bring it back)
-
 ## How It Works
 
 This extension uses the `rocm-smi` command-line tool to collect GPU information and displays it in a floating UI element in the ComfyUI interface. It does not affect the performance of ComfyUI or your GPU.
@@ -59,6 +52,7 @@ If the monitor doesn't appear or doesn't show any data:
 
 - Inspired by the GPU monitoring in [ComfyUI-Crystools](https://github.com/crystian/ComfyUI-Crystools)
 - Created with the help of Claude AI
+- Modify based on this project: https://github.com/iDAPPA/ComfyUI-AMDGPUMonitor.git
 
 ## License
 
