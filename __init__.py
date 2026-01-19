@@ -122,13 +122,13 @@ def get_gpu_info(rocm_smi_path):
             card_info = info['card0']  # Use first GPU
             
             # Try different temperature sensors, starting with edge
-            if 'Temperature (Sensor edge) (C)' in card_info:
-                temp_str = card_info['Temperature (Sensor edge) (C)']
+            if 'Temperature (Sensor junction) (C)' in card_info:
+                temp_str = card_info['Temperature (Sensor junction) (C)']
                 if isinstance(temp_str, str):
                     temp_str = temp_str.replace('°C', '').strip()
                 gpu_stats["gpu_temperature"] = int(float(temp_str))
-            elif 'Temperature (Sensor junction) (C)' in card_info:
-                temp_str = card_info['Temperature (Sensor junction) (C)']
+            elif 'Temperature (Sensor edge) (C)' in card_info:
+                temp_str = card_info['Temperature (Sensor edge) (C)']
                 if isinstance(temp_str, str):
                     temp_str = temp_str.replace('°C', '').strip()
                 gpu_stats["gpu_temperature"] = int(float(temp_str))
