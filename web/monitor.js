@@ -27,6 +27,7 @@ const createMonitorElement = () => {
     title.style.display = "flex";
     title.style.alignItems = "center";
     title.style.justifyContent = "space-between";
+    title.style.fontSize = "0px";
     title.innerHTML = '<span style="color: #ff5555;">AMD GPU Monitor</span>';
 
     // Add collapse button
@@ -36,7 +37,7 @@ const createMonitorElement = () => {
     collapseButton.style.border = "none";
     collapseButton.style.color = "#888";
     collapseButton.style.cursor = "pointer";
-    collapseButton.style.fontSize = "14px";
+    collapseButton.style.fontSize = "10px";
     collapseButton.style.padding = "0 5px";
     collapseButton.title = "Collapse/Expand";
 
@@ -47,16 +48,16 @@ const createMonitorElement = () => {
     closeButton.style.border = "none";
     closeButton.style.color = "#888";
     closeButton.style.cursor = "pointer";
-    closeButton.style.fontSize = "14px";
+    closeButton.style.fontSize = "10px";
     closeButton.style.padding = "0 5px";
     closeButton.title = "Close";
 
     const buttonContainer = document.createElement("div");
-    // buttonContainer.appendChild(collapseButton);
-    // buttonContainer.appendChild(closeButton);
+    buttonContainer.appendChild(collapseButton);
+    buttonContainer.appendChild(closeButton);
 
-    // title.appendChild(buttonContainer);  //关闭按钮
-    // container.appendChild(title);   //标题
+    title.appendChild(buttonContainer);  //关闭按钮
+    container.appendChild(title);   //标题
 
     // Content container that can be collapsed
     const content = document.createElement("div");
