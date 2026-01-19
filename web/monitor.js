@@ -17,7 +17,7 @@ const createMonitorElement = () => {
     container.style.fontFamily = "monospace";
     container.style.fontSize = "30px";
     container.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
-    container.style.width = "330px";
+    container.style.width = "338px";
     container.style.userSelect = "none";
 
     // Add title
